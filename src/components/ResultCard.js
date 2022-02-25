@@ -30,8 +30,17 @@ export const ResultCard = ({ character }) => {
         <div className='header'>
           <h3 className='title'>{character.name}</h3>
           <h4 className='release-date'>
-            {character.sex ? character.sex : '-'}
+            Gender: {character.sex ? character.sex : '-'}
           </h4>
+          <h4 className='release-date'>
+            Kind: {character.kind ? character.kind : '-'}
+          </h4>
+          <h5 className='release-date'>
+            Residence: {character.residence ? character.residence : '-'}
+          </h5>
+          <h5 className='release-date pointer-link'>
+            url: <u>{character.url ? character.url : '-'}</u>
+          </h5>
         </div>
 
         <div className='controls'>
@@ -47,7 +56,7 @@ export const ResultCard = ({ character }) => {
             disabled={addPonyToCollectedDisabled}
             onClick={() => addPonyToCollected(character)}
           >
-            Add to collected
+            Already collected
           </button>
         </div>
       </div>
