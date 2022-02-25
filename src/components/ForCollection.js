@@ -10,6 +10,8 @@ export const ForCollection = () => {
       <div className='container'>
         <div className='header'>
           <h1 className='heading'>Collection Wishlist</h1>
+
+          <span className="count-pill">{forCollection.length} {forCollection.length === 1 ? 'Pony' : 'Ponies'}</span>
         </div> 
 
         {forCollection.length > 0 ? (<div className='movie-grid'>

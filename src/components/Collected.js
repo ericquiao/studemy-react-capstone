@@ -10,6 +10,8 @@ export const Collected = () => {
     <div className='container'>
       <div className='header'>
         <h1 className='heading'>Collected</h1>
+
+        <span className="count-pill">{collected.length} {collected.length === 1 ? 'Pony' : 'Ponies'}</span>
       </div> 
 
       {collected.length > 0 ? (<div className='movie-grid'>
