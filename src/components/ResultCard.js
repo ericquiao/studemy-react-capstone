@@ -1,13 +1,21 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 
 export const ResultCard = ({ character }) => {
-  const{addPonyForCollection, forCollection} = useContext(GlobalContext);
+  const { addPonyForCollection, addPonyToCollected, forCollection, collected } =
+    useContext(GlobalContext);
 
-  let storedPony = forCollection.find(o => o.id === character.id)
+  let storedPony = forCollection.find((o) => o.id === character.id);
+  let storedPonyCollected = collected.find((o) => o.id === character.id);
 
+  const forCollectionDisabled = storedPony
+    ? true
+    : storedPonyCollected
+    ? true
+    : false;
 
-  const forCollectionDisabled = storedPony ? true : false;
+  const addPonyToCollectedDisabled = storedPonyCollected ? true : false;
+
   return (
     <div className='result-card'>
       <div className='poster-wrapper'>
@@ -33,6 +41,13 @@ export const ResultCard = ({ character }) => {
             onClick={() => addPonyForCollection(character)}
           >
             Add for collection
+          </button>
+          <button
+            className='btn'
+            disabled={addPonyToCollectedDisabled}
+            onClick={() => addPonyToCollected(character)}
+          >
+            Add to collected
           </button>
         </div>
       </div>

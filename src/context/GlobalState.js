@@ -27,7 +27,25 @@ export const GlobalProvider = (props) => {
   const addPonyForCollection = (character) => {
     dispatch({ type: 'ADD_PONY_FOR_COLLECTION', payload: character });
   };
+
+  const removePonyForCollection = (id) => {
+    dispatch({type: 'REMOVE_PONY_FOR_COLLECTION', payload:id})
+  }
+
+  const addPonyToCollected = character => {
+    dispatch({type: 'ADD_PONY_TO_COLLECTED', payload: character})
+  }
   
+  //move to for Collection
+  const moveForCollection = (character) => {
+    dispatch({type: 'MOVE_TO_FOR_COLLECTION', payload: character})
+  }
+
+  //remove from collected
+  const removeFromCollected = id => {
+    dispatch({type: 'REMOVE_FROM_COLLECTED', payload:id})
+  }
+
 
   return (
     <GlobalContext.Provider
@@ -35,6 +53,11 @@ export const GlobalProvider = (props) => {
         forCollection: state.forCollection,
         collected: state.collected,
         addPonyForCollection,
+        removePonyForCollection,
+        addPonyToCollected,
+        addPonyToCollected,
+        moveForCollection,
+        removeFromCollected
       }}
     >
       {props.children}
