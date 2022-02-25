@@ -9,7 +9,7 @@ export const Collected = () => {
     <div className='movie-page'>
     <div className='container'>
       <div className='header'>
-        <h1 className='heading'>Collected</h1>
+        <h1 className='heading'>⭐Collected</h1>
 
         <span className="count-pill">{collected.length} {collected.length === 1 ? 'Pony' : 'Ponies'}</span>
       </div> 

@@ -14,7 +14,7 @@ export default function PonyControls({ character, type }) {
             className='ctrl-btn'
             onClick={() => addPonyToCollected(character)}
           >
-            <i className='fa-fw far fa-eye'></i>
+            <i className='fa-fw far fa-star'></i>
           </button>
 
           <button
@@ -29,7 +29,7 @@ export default function PonyControls({ character, type }) {
       {type === 'collected' && (
         <>
           <button className='ctrl-btn' onClick={()=>moveForCollection(character)}>
-            <i className='fa-fw far fa-eye-slash'></i>
+            <i className='fa-fw far fa-moon'></i>
           </button>
 
           <button className='ctrl-btn' onClick={()=>removeFromCollected(character.id)}>

@@ -9,7 +9,7 @@ export const ForCollection = () => {
     <div className='movie-page'>
       <div className='container'>
         <div className='header'>
-          <h1 className='heading'>Collection Wishlist</h1>
+          <h1 className='heading'>🌙 Collection Wishlist</h1>
 
           <span className="count-pill">{forCollection.length} {forCollection.length === 1 ? 'Pony' : 'Ponies'}</span>
         </div> 

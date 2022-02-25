@@ -5,8 +5,8 @@ import { ResultCard } from './ResultCard';
 export const Add = () => {
   const [query, setQuery] = useState('');
   const [data, setData] = useState([]);
+  const [visible, setVisible] = useState(4)
 
-  
   useEffect(()=>{
     let target="all";
     fetch(`https://the-ultimate-api-challenge.herokuapp.com/http://ponyweb.ml/v1/character/${target}`)
@@ -47,6 +47,17 @@ export const Add = () => {
          }
        });
   };
+
+  const showMorePonies = () => {
+    setVisible(prev => prev+4)
+  }
+
+const forLoadMoreDisabled = visible>= data ? true : false;
+
+
+
+  
+
   return (
     <div className='add-page'>
       <div className='container'>
@@ -62,13 +73,18 @@ export const Add = () => {
 
           {data.length > 0 && (
             <ul className='results'>
-              {data.map((character) => (
+              {data.slice(0,visible).map((character) => (
                 <li  key={character.id}>
                   <ResultCard character={character}/>
                 </li>
               ))}
             </ul>
           )}
+          <button 
+            className='btn' 
+            onClick = {showMorePonies}
+            disabled={forLoadMoreDisabled}
+            >more ponies</button>
         </div>
       </div>
     </div>
