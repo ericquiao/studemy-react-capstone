@@ -9,7 +9,7 @@ export const Add = () => {
 
   useEffect(()=>{
     let target="all";
-    fetch(`https://the-ultimate-api-challenge.herokuapp.com/http://ponyweb.ml/v1/character/${target}`)
+    fetch(`https://api.allorigins.win/raw?url=http://ponyweb.ml/v1/character/${target}`)
       .then((res) => res.json())
       .then((results) => { 
         
@@ -36,7 +36,7 @@ export const Add = () => {
     }
     setQuery(e.target.value);
 
-    fetch(`https://the-ultimate-api-challenge.herokuapp.com/http://ponyweb.ml/v1/character/${target}`)
+    fetch(`https://api.allorigins.win/raw?url=http://ponyweb.ml/v1/character/${target}`)
       .then((res) => res.json())
       .then((results) => { 
         
